@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<a href="index.html">Go back to Main Page</a>
+
+<body class="main-music">
+
+
+  <h1>MUSIC SEARCH</h1>
+  <!-- Creating a search bar-->
+  <form name="searchForm" onsubmit="search(); return false">
+    <input name="term" placeholder="Search term">
+    <button type="submit">Search</button>
+    <p>
+      Search within:
+      <select name="searchType">
+        <option value="all">All information about songs</option>
+        <option value="artist">Artist name</option>
+        <option value="album">Album name</option>
+        <option value="title">Song name</option>
+      </select>
+    </p>
+  </form>
+  <!-- A section of the page with serch results-->
+  <article class="searchResults">
+    Search for music.
+  </article>
+  <!-- Load and run the main.js javasccript -->
+  <script src="main-music.js"></script>
+</body>
+
+</html>
+

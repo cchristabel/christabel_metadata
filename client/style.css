@@ -1,0 +1,85 @@
+ #nav {
+    width:750px;
+    margin:0 auto;
+    list-style:none;
+    text-align: center;
+    padding-top: 22vh;
+    }
+
+    #nav li {
+    float:center;
+    padding: 10px;
+    }
+
+    #nav a {
+    display:inline-block;
+
+    text-align:center;
+    width:150px; 
+    text-decoration:none;
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 5px;
+    background-color: rgb(97, 113, 220);
+    text-size-adjust: 10px;
+    }
+
+    #nav a:hover {
+        background-color:rgb(113, 225, 175);
+    }
+
+.index-style{
+    background-image:url(backgrounds/mainpage.jpg) ;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: right;
+
+    h1{
+        text-align: center;
+    }
+}
+
+.main-powerpoints{
+    background-image:url(backgrounds/powerpoint.jpg) ;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: right;
+}
+
+.main-music{
+    background-image:url(backgrounds/music.jpg) ;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: right;
+}
+
+.main-pdfs{
+    background-image:url(backgrounds/pdf.jpg) ;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: right;
+}
+
+.main-photos{
+    background-image:url(backgrounds/photos.jpg) ;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: right;
+}
+
+img{
+    width: 200px;
+    float: right;
+}
+
+section{
+    overflow: auto;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.searchResults {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 30px;
+    padding: 40px;
+}

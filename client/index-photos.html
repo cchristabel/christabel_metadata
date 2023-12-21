@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photos</title>
+  <link rel="stylesheet" href="style.css">
+  <a href="index.html">Go back to Main Page</a>
+</head>
+
+<body class="main-photos">
+  <h1>PHOTO SEARCH</h1>
+  <!-- A form with a search field and a search button-->
+  <!-- Call the search function when the form is sent/submitted -->
+  <!-- return false is needed fro the web page NOT to reload -->
+  <form name="searchForm" onsubmit="search(); return false">
+    <input name="term" placeholder="Search Photos">
+    <button type="submit">Search</button>
+  </form>
+  <!-- A section of the page with serch results-->
+  <article class="searchResults">
+    Search for a photo by name or description.
+  </article>
+  <!-- Load and run the main.js javasccript -->
+  <script src="main-photos.js"></script>
+</body>
+
+</html>
