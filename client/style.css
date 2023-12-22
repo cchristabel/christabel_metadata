@@ -65,6 +65,7 @@
     background-attachment: fixed;
     background-size: cover;
     background-position: right;
+    
 }
 
 img{
@@ -81,5 +82,12 @@ section{
 .searchResults {
     background-color: rgba(255, 255, 255, 0.4);
     border-radius: 30px;
-    padding: 40px;
+    padding: 10px;
+    margin: 0 0,5%;
+    width: 63%;
 }
+
+.musicsearchResults {
+    background-color: powderblue;
+}
+

@@ -13,13 +13,13 @@ const db = await mysql.createConnection({
   database: 'christabel_metadata'
 });
 
-// A small function for a query
+//Function for a query
 async function query(sql, listOfValues) {
   let result = await db.execute(sql, listOfValues);
   return result[0];
 }
 
-// read all file names from the images fodler
+// read all file names from the images folder
 const files = await fs.readdirSync('./client/images/');
 
 
@@ -40,6 +40,4 @@ for (let image of images) {
 
 }
 
-// exit/stop the script when everything is imported
-// so you don't have to press Ctrl+C
 process.exit();

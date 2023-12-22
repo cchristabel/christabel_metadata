@@ -2,13 +2,13 @@
 import pdfParse from 'pdf-parse-fork';
 
 import mysql from 'mysql2/promise';
-//Importera file system (fs) - inbyggt i node.js
+//Import file system fs
 import fs from 'fs';
  
-// Ger oss en lista på alla filerna i mappen
+// Give us a list of the files in the map
 let files = fs.readdirSync('./client/pdfs/');
  
-// Kopplar oss till databasen
+// Connecting to database
 const db = await mysql.createConnection({
     host: '161.97.144.27',
     port: "8094",
@@ -17,7 +17,7 @@ const db = await mysql.createConnection({
     database: 'christabel_metadata'
   });
 
-// Funktion för att skapa querys
+// Function for a query
 async function query(sql, listOfValues) {
   let result = await db.execute(sql, listOfValues);
   return result[0];
@@ -31,8 +31,6 @@ for (let file of files) {
 
 
   // create a new object which only contains the parts I'm interested in.
-  // there are other parts we don't use:
-  // numrender, metadata, version,
   let metadata = {
     numpages: data.numpages,
     info: data.info
@@ -40,9 +38,6 @@ for (let file of files) {
 
   // get the full text of the pdf as well
   let fullText = data.text;
-
-  // todo - thing we might want to do with the data
-  // when we write it to a table in the database
 
   // todo: write to a column of type varchar
   console.log(data);
@@ -54,17 +49,15 @@ for (let file of files) {
   console.log(fullText);
 
  
-  // Sätt in i databasen med hjälp av query funktionen
+  // Inserting into database
   let result = await query(`
     INSERT INTO pdfs (name, description)
     VALUES(?, ?)
   `, [file, metadata]);
  
-  // Logga resultatet för att se att något händer.
+  // Log results
   console.log(file, result);
  
 }
  
-// Automatisk stop när det är klart, annars tror VSC
-// att något mer ska skickas in då vi är kopplade till databasen.
 process.exit();
