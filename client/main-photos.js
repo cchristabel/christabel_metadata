@@ -13,7 +13,7 @@ async function search() {
     // convert json to a javascript data structure
     let photos = await rawData.json();
 
-    // create an variable name that initially is an empty string
+    // create a variable name that initially is an empty string
     let html = `
       <p>You searched for "${searchTerm}"...</p>
       <p>Found ${photos.length} results.</p>
@@ -23,14 +23,21 @@ async function search() {
     for (let photo of photos) {
         let meta = photo.description;
       html += `
-      <section>
-      <h2>${photo.name}</h2>
-      <a href="https://maps.google.com/?q=${photo.description.latitude},${photo.description.longitude}" target="_blank"><img src="/images/${photo.name}"></a>
-      <p><b>Source:</b> ${meta.FileSource}</p>
-      <p><b>Picture Taken:</b> ${meta.CreateDate}</p>  
-      <p><b>Longitude:</b> ${meta.longitude}</p>
-      <p><b>Latitude:</b> ${meta.latitude}</p>
-    </section>
+        <section>
+
+         <h2>${photo.name}</h2>
+
+         <a href="https://maps.google.com/?q=${photo.description.latitude},${photo.description.longitude}" target="_blank"><img src="/images/${photo.name}"></a>
+
+         <p><b>Source:</b> ${meta.FileSource}</p>
+
+         <p><b>Picture Taken:</b> ${meta.CreateDate.split('T')[0]}</p> 
+
+         <p><b>Longitude:</b> ${meta.longitude}</p>
+
+         <p><b>Latitude:</b> ${meta.latitude}</p>
+         
+      </section>
       `;
     }
 

@@ -3,10 +3,11 @@ import fs from 'fs';
 
 // import the musicMetadata
 import musicMetadata from 'music-metadata';
+
 // Import the database driver
 import mysql from 'mysql2/promise';
 
-// Databse connection
+// Database connection
 const db = await mysql.createConnection({
     host: '161.97.144.27', 
     port: '8094',               
@@ -21,7 +22,7 @@ async function query(sql, listOfValues) {
   return result[0];
 }
 
-// read all file names from the Music fodler
+// read all file names from the music folder
 const files = await fs.readdirSync('./client/music/');
 
 // loop through all music files and read metadata
@@ -45,4 +46,5 @@ for (let file of files) {
   console.log(file, result);
 
 }
+// Automatic stop when done, so VSC doesn't think we are going to be sending in more data when connceted to the database.
 process.exit();

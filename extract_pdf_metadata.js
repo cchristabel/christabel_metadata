@@ -2,6 +2,7 @@
 import pdfParse from 'pdf-parse-fork';
 
 import mysql from 'mysql2/promise';
+
 //Import file system fs
 import fs from 'fs';
  
@@ -23,7 +24,7 @@ async function query(sql, listOfValues) {
   return result[0];
 }
  
-// loop through all pdfs files and read metadata
+// loop through all pdf files and read metadata
 for (let file of files) {
 
   // extract all data/metadata from the pdf
@@ -59,5 +60,5 @@ for (let file of files) {
   console.log(file, result);
  
 }
- 
+ // Automatic stop when done, so VSC doesn't think we are going to be sending in more data when connceted to the database.
 process.exit();

@@ -13,7 +13,7 @@ async function search() {
     // convert json to a javascript data structure
     let pdfs = await rawData.json();
 
-    // create an variable name that initially is an empty string
+    // create a variable name that initially is an empty string
     let html = `
       <p>You searched for "${searchTerm}"...</p>
       <p>Found ${pdfs.length} results.</p>
@@ -25,10 +25,15 @@ async function search() {
       console.log(pdf.name);
       html += `
         <section>
+
           <h2>${meta.Title}</h2>
+
           <p><b>Author:</b>${meta.Author}</p>
+
           <p><b>Creator:</b>${meta.Creator}</p>
-            <a href="pdfs/${pdf.name}">Download the PDF</a>.
+
+          <a href="pdfs/${pdf.name}">Download the PDF</a>.
+
         </section>
       `;
     }

@@ -1,3 +1,4 @@
+ 
  #nav {
     width:750px;
     margin:0 auto;
@@ -7,17 +8,15 @@
     }
 
     #nav li {
-    float:center;
+    float: center;
     padding: 10px;
     }
 
     #nav a {
     display:inline-block;
-
     text-align:center;
     width:150px; 
     text-decoration:none;
-    display: inline-block;
     padding: 10px 30px;
     border-radius: 5px;
     background-color: rgb(97, 113, 220);

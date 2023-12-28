@@ -39,5 +39,5 @@ for (let image of images) {
   console.log(image, result);
 
 }
-
+// Automatic stop when done, so VSC doesn't think we are going to be sending in more data when connceted to the database.
 process.exit();

@@ -17,7 +17,7 @@ async function search() {
     // convert json to a javascript data structure
     let songs = await rawData.json();
 
-    // create an variable name that initially is an empty string
+    // create a variable name that initially is an empty string
     let html = `
       <p>You searched for "${searchTerm}"...</p>
       <p>Found ${songs.length} results.</p>
@@ -28,12 +28,17 @@ async function search() {
         let meta = song.description.common;
         html += `
           <section>
+
             <h2>${meta.title}</h2>
+
             <p><b>Artist:</b> ${meta.artist}</p>
+
             <p><b>Album:</b> ${meta.album}</p>  
+
             <p>
               <audio controls src="music/${song.name}">
             </p>
+            
           </section>
         `;
 

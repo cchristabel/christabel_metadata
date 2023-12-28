@@ -31,7 +31,7 @@ for (let json of data) {
   // remove the file name
   delete json.digest;
 
-  // remove sha hashes as well (only needed for file authenticy checks)
+  // remove sha hashes as well (only needed for file authenticity checks)
   delete json.sha256;
   delete json.sha512;
 
@@ -44,6 +44,5 @@ for (let json of data) {
 
 }
  
-// Automatisk stop när det är klart, annars tror VSC
-// att något mer ska skickas in då vi är kopplade till databasen.
+// Automatic stop when done, so VSC doesn't think we are going to be sending in more data when connceted to the database.
 process.exit();
