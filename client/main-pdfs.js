@@ -32,7 +32,7 @@ async function search() {
 
           <p><b>Creator:</b>${meta.Creator}</p>
 
-          <a href="pdfs/${pdf.name}">Download the PDF</a>.
+          <a href="pdfs/${pdf.name}" target="_blank">Download the PDF</a>.
 
         </section>
       `;
