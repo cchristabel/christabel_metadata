@@ -1,5 +1,5 @@
 # Metadata
-# Project Overview
+# Project Description
 ## Objective
 The project involved creating a system capable of:
 - Accepting various file types, such as photos, PDFs, audio files, and potentially Office documents.
